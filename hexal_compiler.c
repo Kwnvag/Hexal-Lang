@@ -487,9 +487,7 @@ static const char *const HX_RUNTIME[] = {
     "#define HX_NEAR 0.05",
     "#define HX_REACH 8.0",
     "static double hx_cx = 0.0, hx_cy = 0.0, hx_cz = 0.0;",
-             /* 🟢 ΔΙΟΡΘΩΘΗΚΕ: Προσθήκη κάθετης ταχύτητας κάμερας */
-     /* 🟢 ΔΙΟΡΘΩΘΗΚΕ: Προσθήκη βαρύτητας κάμερας */
-           /* 🟢 ΔΙΟΡΘΩΘΗΚΕ: Προσθήκη ελέγχου εδάφους κάμερας */
+
     "static double hx_yaw = 0.0, hx_pitch = 0.0;",
     "static int hx_sky_r = 0, hx_sky_g = 0, hx_sky_b = 0;",
     "static double hx_fogd = 0.0;",
@@ -909,7 +907,7 @@ static const char *const HX_RUNTIME[] = {
     "    DeleteObject(bg);",
     "    hx_basis(f, r, u);",
     "",
-    "    /* 🧠 3D CAMERA PHYSICS: Εφαρμογή βαρύτητας και ανίχνευση εδάφους */",
+    "    
     "    if (hx_cy > 2.0) {",
     "        hx_c_vy += hx_c_gravity;",
     "        hx_c_on_ground = 0;",
@@ -2613,7 +2611,7 @@ int main(int argc, char **argv) {
     printf("Hexal: built '%s'%s\n", exePath,
            hasLoop ? "" : " (no loop in the program: the window stays open until closed)");
 
-    /* 🚀 GLOBAL RUN FIXED: Καθαρή, ασφαλής εκτέλεση του τοπικού αρχείου χωρίς % tokens! */
+    
     printf("Hexal: Launching game...\n");
     char finalRunCmd[PATH_MAX_LEN + 16];
     snprintf(finalRunCmd, sizeof finalRunCmd, ".\\%s", exePath);
